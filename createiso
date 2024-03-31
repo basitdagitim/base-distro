@@ -72,8 +72,8 @@ for paket in libpcre2 busybox \
 		libselinux libsepol libsemanage mcstrans eudev xz openrc 	
 do
 #kmod eudev grup openrc pam
-chroot $rootfs /bin/bps -ri $paket; 
-#$rootfs/bin/bps -i  $paket $rootfs
+#chroot $rootfs /bin/bps -ri $paket; 
+$rootfs/bin/bps -ri  $paket $rootfs
 done
 
 
