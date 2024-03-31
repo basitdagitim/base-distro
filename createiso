@@ -69,7 +69,8 @@ for paket in libpcre2 busybox \
 		parted dosfstools kmod grub \
 		e2fsprogs \gzip \gawk initramfs-tools zlib audit findutils \
 		zstd libxml2 brotli expat libmd pam \
-		libselinux libsepol libsemanage mcstrans eudev xz openrc 	
+		eudev xz openrc 	
+#libselinux libsepol libsemanage mcstrans 
 do
 #kmod eudev grup openrc pam
 #chroot $rootfs /bin/bps -ri $paket; 
