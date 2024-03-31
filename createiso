@@ -59,20 +59,20 @@ $rootfs/bin/bps -ri libpcre2 $rootfs
 $rootfs/bin/bps -ri coreutils $rootfs
 $rootfs/bin/bps -ri util-linux $rootfs
 
-for paket in libpcre2 libselinux libsepol libsemanage mcstrans attr busybox \
-		readline ncurses \bash kmod eudev util-linux \grep \gawk \sed \
-		grub e2fsprogs libarchive xz initramfs-tools \gzip \
-		coreutils acl gmp findutils openrc audit pam libcap \
-		zlib zstd libxml2 brotli \
-		shadow parted dosfstools\
-		curl openssl openssl-1.1 openssh expat libmd dialog \
-		 linux-image linux-headers linux-libc-dev libc6-dev libstdc++-dev \
-		live-boot live-config \
-		
-		#x11-base-base x11-libs-base x11-driver-base font-base libbsd mesa freetype dbus openssh xinit expat libmd dialog
-		# curl openssl 
-do 
-chroot $rootfs /bin/bps -i $paket; 
+#for paket in 	 \gawk gzip  e2fsprogs findutils audit  \
+#		linux-image linux-headers linux-libc-dev libc6-dev libstdc++-dev live-boot live-config initramfs-tools busybox \
+#		openrc pam kmod eudev grub zstd libxml2 brotli parted dosfstools expat libmd \
+#		zlib xz
+#do 
+for paket in libpcre2 busybox \
+		linux-image linux-headers linux-libc-dev libc6-dev libstdc++-dev live-boot live-config \
+		parted dosfstools kmod grub \
+		e2fsprogs \gzip \gawk initramfs-tools zlib audit findutils \
+		zstd libxml2 brotli expat libmd pam \
+		libselinux libsepol libsemanage mcstrans eudev xz openrc 	
+do
+#kmod eudev grup openrc pam
+chroot $rootfs /bin/bps -ri $paket; 
 #$rootfs/bin/bps -i  $paket $rootfs
 done
 
