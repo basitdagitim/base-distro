@@ -70,7 +70,8 @@ for paket in libpcre2 busybox \
 		e2fsprogs \gzip \gawk initramfs-tools zlib audit findutils \
 		zstd libxml2 brotli expat libmd pam \
 		eudev xz openrc \
-		libselinux libsepol libsemanage mcstrans 
+		libselinux 
+#libsepol libsemanage mcstrans 
 #
 do
 #kmod eudev grup openrc pam
