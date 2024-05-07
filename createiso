@@ -81,8 +81,8 @@ chroot $rootfs /bin/bps -i $paket;
 #$rootfs/bin/bps -ri  $paket $rootfs
 done
 
-
-for paket in shadow openbox gtk3 libjpeg-turbo dbus polkit elogind shared-mime-info
+#gtk3 ->glib
+for paket in glib shadow openbox gtk3 libjpeg-turbo dbus polkit elogind shared-mime-info
 do
 chroot $rootfs /bin/bps -i $paket; 
 done
