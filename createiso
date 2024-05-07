@@ -77,8 +77,8 @@ for paket in libpcre2 busybox \
 #
 do
 #kmod eudev grup openrc pam
-#chroot $rootfs /bin/bps -ri $paket; 
-$rootfs/bin/bps -ri  $paket $rootfs
+chroot $rootfs /bin/bps -i $paket; 
+#$rootfs/bin/bps -ri  $paket $rootfs
 done
 
 $rootfs/bin/bps -i  shadow $rootfs
