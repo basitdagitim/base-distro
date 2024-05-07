@@ -81,15 +81,11 @@ chroot $rootfs /bin/bps -i $paket;
 #$rootfs/bin/bps -ri  $paket $rootfs
 done
 
-$rootfs/bin/bps -i  shadow $rootfs
-$rootfs/bin/bps -i  openbox $rootfs
-$rootfs/bin/bps -i  gtk3 $rootfs
-$rootfs/bin/bps -i  libjpeg-turbo $rootfs
-$rootfs/bin/bps -i  dbus $rootfs
-$rootfs/bin/bps -i  polkit $rootfs
-$rootfs/bin/bps -i  elogind $rootfs
-$rootfs/bin/bps -i  shared-mime-info $rootfs
 
+for paket in shadow openbox gtk3 libjpeg-turbo dbus polkit elogind shared-mime-info
+do
+chroot $rootfs /bin/bps -i $paket; 
+done
 ### update-initrd
 fname=$(basename $rootfs/boot/config*)
 kversion=${fname:7}
