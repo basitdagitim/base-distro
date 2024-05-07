@@ -83,7 +83,7 @@ done
 #glib-> libffi
 #gtk3 ->glib gdk_pixbuf harfbuzz fontconfig
 #update-mime-database-> gcc 
-for paket in glib fontconfig libffi \gcc gdk-pixbuf harfbuzz shadow openbox gtk3 libjpeg-turbo dbus polkit elogind shared-mime-info
+for paket in libffi fribidi freetype glib fontconfig \gcc gdk-pixbuf harfbuzz shadow openbox gtk3 libjpeg-turbo dbus polkit elogind shared-mime-info
 do
 chroot $rootfs /bin/bps -i $paket; 
 done
