@@ -37,10 +37,12 @@ $rootfs/bin/busybox tar -xf $rootfs/tmp/bps/kur/rootfs.tar.xz -C $rootfs
 #paket adresi ekleniyor
 $rootfs/bin/busybox mkdir -p $rootfs/etc/bps
 echo "basitdagitim/base-bps-binary-packages">$rootfs/etc/bps/sources.list
-#echo "basitdagitim/other-bps-binary-packages">>$rootfs/etc/bps/sources.list
+echo "basitdagitim/other-bps-binary-packages">>$rootfs/etc/bps/sources.list
 #echo "basitdagitim/debian-bps-binary-packages">>$rootfs/etc/bps/sources.list
-#echo "basitdagitim/x11-bps-binary-packages">>$rootfs/etc/bps/sources.list
-#echo "anadolulinux/lfs-binary-packages">>$rootfs/etc/bps/sources.list
+echo "basitdagitim/x11-bps-binary-packages">>$rootfs/etc/bps/sources.list
+echo "basitdagitim/lxde-bps-binary-packages">>$rootfs/etc/bps/sources.list
+echo "anadolulinux/lfs-binary-packages">>$rootfs/etc/bps/sources.list
+
 ### installing bps package in rootfs
 $rootfs/bin/bps -u $rootfs
 #**********************************************************************
@@ -79,6 +81,14 @@ do
 $rootfs/bin/bps -ri  $paket $rootfs
 done
 
+$rootfs/bin/bps -i  shadow $rootfs
+$rootfs/bin/bps -i  openbox $rootfs
+$rootfs/bin/bps -i  gtk3 $rootfs
+$rootfs/bin/bps -i  libjpeg-turbo $rootfs
+$rootfs/bin/bps -i  dbus $rootfs
+$rootfs/bin/bps -i  polkit $rootfs
+$rootfs/bin/bps -i  elogind $rootfs
+$rootfs/bin/bps -i  shared-mime-info $rootfs
 
 ### update-initrd
 fname=$(basename $rootfs/boot/config*)
